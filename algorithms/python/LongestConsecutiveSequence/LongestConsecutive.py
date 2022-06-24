@@ -1,5 +1,5 @@
 def longestConsecutive(self, nums):
-    
+
     #first, create a hashmap
     hm = set(nums)
     longest = 0
@@ -14,5 +14,5 @@ def longestConsecutive(self, nums):
                 cons += 1
             if cons > longest:
                 longest = cons
-            
+
     return longest

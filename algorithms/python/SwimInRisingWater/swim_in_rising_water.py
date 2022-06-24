@@ -10,7 +10,7 @@ from typing import List
 
 class Solution:
     def swimInWater(self, grid: List[List[int]]) -> int:
-        src, dst = grid[0][0], grid[len(grid)-1][len(grid)-1]
+        src, dst = grid[0][0], grid[-1][len(grid)-1]
         visited = set()
         heap_queue = [(src, 0, 0)]  # src, row, col
         output = 0
@@ -31,9 +31,7 @@ class Solution:
         return output
 
     def check_bounds(self, r, c, grid) -> bool:
-        if 0 <= r < len(grid[0]) and 0 <= c < len(grid):
-            return True
-        return False
+        return 0 <= r < len(grid[0]) and 0 <= c < len(grid)
 
 
 if __name__ == "__main__":
